@@ -24,3 +24,4 @@ voveo will be a single page application powered by Rails and AngularJS. voveo wi
 
 - You have the option to add an email to your saved polling/election information that will send you your info.
 - Add the ability to query for your representatives and add links to their sites/ways to contact them.
+- Use React instead of AngularJS.
