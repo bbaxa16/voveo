@@ -1,3 +1,12 @@
 body {
   background: #3CC47C, #1E392A, #E9C893, #828081;
 }
+
+#mainlogo {
+  height: 30%;
+  width: 30%;
+}
+
+input, select {
+  margin: 1%;
+}
