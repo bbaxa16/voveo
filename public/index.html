@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>voveo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="icon" href="./assets/voveo_sm.png">
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" charset="utf-8"></script>
     <script src="./js/app.js" charset="utf-8"></script>
   </head>
   <body>
     <section ng-controller='mainController as ctrl'>
-     {{ctrl.message}}
+      <div class="container text-center">
+        <img src="./assets/voveo.png" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="container text-center">
+        <form class="" ng-submit="">
+          <input type="text" ng-model="" placeholder="address">
+          <input type="text" ng-model="" placeholder="city">
+          <input type="text" ng-model="" placeholder="state">
+          <button type="submit">Submit</button>
+       </form>
+      </div>
     </section>
   </body>
 </html>
