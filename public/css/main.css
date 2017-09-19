@@ -10,3 +10,8 @@ body {
 input, select {
   margin: 1%;
 }
+
+.officialphoto {
+  height: 10%;
+  width: 10%;
+}

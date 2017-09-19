@@ -16,7 +16,23 @@
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
         </div>
       </header>
-      <section ng-include="'./form.html'"></section>
+      <section ng-include="'./form.html'">
+      </section>
+      <div class="container">
+        <ul ng-repeat='official in ctrl.officials'>
+          <div class= "text-center">                    <h4>{{official.name}}</h4>
+            <img src="{{official.photoUrl}}" class='officialphoto' alt="official photo unavailable">
+          </div>
+        </ul>
+      </div>
+      <div class="container text-center">
+        <h4>login</h4>
+        <form class="" ng-submit='ctrl.login(userPass)'>
+          <input type="text" ng-model='userPass.username' placeholder="username">
+          <input type="password" ng-model='userPass.password' placeholder="password">
+          <button>login</button>
+        </form>
+      </div>
     </section>
   </body>
 </html>
