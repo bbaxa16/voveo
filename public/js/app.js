@@ -25,14 +25,21 @@ app.controller('mainController', ['$http', function($http){
       console.log(response);
       this.user = response.data.user;
       localStorage.setItem('token', JSON.stringify(response.data.token));
+      localStorage.setItem('logged', JSON.stringify(true));
+      this.checkLogin();
     }.bind(this));
   }
   this.logout = function() {
     localStorage.clear('token');
     location.reload();
   }
-  this.logged = function() {
-
+  this.checkLogin = function() {
+    if (localStorage.logged === "true"){
+      controller.logged = true;
+    }
+    else {
+      controller.logged = false;
+    }
   }
   this.getUsers = function(){
     $http({
@@ -50,5 +57,5 @@ app.controller('mainController', ['$http', function($http){
       }
     }.bind(this));
   }
-
+  this.checkLogin();
 }]);
