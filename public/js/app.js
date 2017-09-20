@@ -23,7 +23,25 @@ app.controller('mainController', ['$http', function($http){
       data: { user: { username: userPass.username, password: userPass.password }},
     }).then(function(response){
       console.log(response);
-    })
+      this.user = response.data.user;
+      localStorage.setItem('token', JSON.stringify(response.data.token));
+    }.bind(this));
+  }
+  this.getUsers = function(){
+    $http({
+      url: this.url + '/users',
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+      }
+    }).then(function(response){
+      if(response.data.status == 401){
+      this.error = 'Unauthorized';
+      } else {
+      this.users = response.data[0].username
+      console.log(response);
+      }
+    }.bind(this));
   }
 
 }]);
