@@ -11,19 +11,38 @@
     <script src="./js/app.js" charset="utf-8"></script>
   </head>
   <body>
-    <nav class='nav navbar navbar-light bg-faded" navbar-fixed-top'>
-      <a href="#">login</a>
-      <a href="#">register</a>
-      <form class="form-inline">
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">@</span>
-          <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
-          <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-        </div>
-      </form>
-    </nav>
     <section ng-controller='mainController as ctrl'>
+      <nav class='nav navbar navbar-light bg-faded" navbar-fixed-top'>
+        <a href="#" ng-click='ctrl.toggleLogin()'>login</a>
+        <a href="#" ng-click='ctrl.toggleRegister()'>register</a>
+
+        <!-- login form -->
+
+        <form class="form-inline" ng-if='ctrl.loginForm' ng-submit='ctrl.login(userPass)'>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input type="text" class="form-control" ng-model='userPass.username' placeholder="Username" aria-describedby="basic-addon1">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+            <input type="password" class="form-control" ng-model='userPass.password' placeholder="Password" aria-describedby="basic-addon1">
+            <button class="btn btn-outline-primary">login</button>
+          </div>
+        </form>
+
+        <!-- register form -->
+
+        <form class="form-inline" ng-if='ctrl.registerForm' ng-submit='ctrl.login(userPass)'>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input type="text" class="form-control" ng-model='userPass.username' placeholder="Username" aria-describedby="basic-addon1">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+            <input type="password" class="form-control" ng-model='userPass.password' placeholder="Password" aria-describedby="basic-addon1">
+            <button class="btn btn-outline-primary">register</button>
+          </div>
+        </form>
+      </nav>
+
+      <!-- logo -->
+
       <header>
         <div class="container text-center">
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
@@ -37,14 +56,6 @@
             <img src="{{official.photoUrl}}" class='officialphoto' alt="official photo unavailable">
           </div>
         </ul>
-      </div>
-      <div class="container text-center">
-        <h4>login</h4>
-        <form class="" ng-submit='ctrl.login(userPass)'>
-          <input type="text" ng-model='userPass.username' placeholder="username">
-          <input type="password" ng-model='userPass.password' placeholder="password">
-          <button>login</button>
-        </form>
       </div>
       <button ng-click='ctrl.getUsers()'>get em</button>
       <h4>{{ctrl.users}}</h4>

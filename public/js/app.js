@@ -3,6 +3,16 @@ const app = angular.module('voveo', []);
 app.controller('mainController', ['$http', function($http){
   const controller = this;
   this.url = 'http://localhost:3000/';
+  this.loginForm = false;
+  this.registerForm = false;
+  this.toggleRegister = function() {
+    this.registerForm = !this.registerForm;
+    this.loginForm = false;
+  }
+  this.toggleLogin = function() {
+    this.loginForm = !this.loginForm;
+    this.registerForm = false;
+  }
   this.getReps = function(address){
     $http({
       method: 'GET',
