@@ -27,9 +27,12 @@ app.controller('mainController', ['$http', function($http){
       localStorage.setItem('token', JSON.stringify(response.data.token));
     }.bind(this));
   }
-  this.logout = function () {
+  this.logout = function() {
     localStorage.clear('token');
     location.reload();
+  }
+  this.logged = function() {
+
   }
   this.getUsers = function(){
     $http({

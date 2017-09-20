@@ -1,5 +1,8 @@
 body {
-  background: #3CC47C, #1E392A, #E9C893, #828081;
+  background: #1E392A, #E9C893;
+}
+.nav {
+  background: #1E392A;
 }
 
 #mainlogo {
@@ -14,4 +17,13 @@ input, select {
 .officialphoto {
   height: 10%;
   width: 10%;
+}
+
+#address {
+  background: #828081;
+  padding: 2%;
+  border-radius: 2%;
+}
+#address-form {
+  justify-content: center;
 }

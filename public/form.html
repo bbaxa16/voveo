@@ -1,5 +1,5 @@
-<div class="container text-center">
-  <form class="form-group row" ng-submit="ctrl.getReps(address)">
+<div class="container text-center" id="address">
+  <form class="form-group row" id="address-form" ng-submit="ctrl.getReps(address)">
     <input type="text" class="form-control col-8" ng-model="ctrl.address" placeholder="address">
     <input type="text" class="form-control col-8" ng-model="ctrl.city" placeholder="city">
     <select class="custom-select  mb-2 mr-sm-2 mb-sm-0 form-control col-4" ng-model='ctrl.state'>
