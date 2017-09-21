@@ -5,8 +5,14 @@ body {
   background: #C0C0C0;
   padding: 2%;
 }
-.nav-btn {
-  float: left;
+#nav-btn {
+  margin-left: 5%;
+  margin-right: 2%;
+}
+#nav-form {
+  margin: auto;
+  position: relative;
+  float: right;
 }
 #mainlogo {
   height: 30%;

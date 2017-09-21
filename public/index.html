@@ -12,13 +12,13 @@
   </head>
   <body>
     <section ng-controller='mainController as ctrl'>
-      <nav class='nav navbar navbar-light bg-faded" navbar-fixed-top'>
-        <a href="#" ng-click='ctrl.toggleLogin()'><button class="btn btn-primary nav-btn">login</button></a>
-        <a href="#" ng-click='ctrl.toggleRegister()'><button class="btn btn-primary nav-btn">register</button></a>
-        <button class="btn btn-danger nav-btn" ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
+      <nav class='nav navbar-light bg-faded" navbar-fixed-top'>
+        <a href="#" ng-click='ctrl.toggleLogin()' ng-if='!ctrl.logged'><button class="btn btn-primary " id="nav-btn">login</button></a>
+        <a href="#" ng-click='ctrl.toggleRegister()' ng-if='!ctrl.logged'><button class="btn btn-primary " id='nav-btn'>register</button></a>
+        <button class="btn btn-danger" id='nav-btn' ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
         <!-- login form -->
 
-        <form class="form-inline" ng-if='ctrl.loginForm' ng-submit='ctrl.login(userPass)'>
+        <form class="form-inline" id='nav-form' ng-if='ctrl.loginForm' ng-submit='ctrl.login(userPass)'>
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">@</span>
             <input type="text" class="form-control" ng-model='userPass.username' placeholder="Username" aria-describedby="basic-addon1">
@@ -30,7 +30,7 @@
 
         <!-- register form -->
 
-        <form class="form-inline" ng-if='ctrl.registerForm' ng-submit='ctrl.register(register)'>
+        <form class="form-inline" id="nav-form" ng-if='ctrl.registerForm' ng-submit='ctrl.register(register)'>
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">@</span>
             <input type="text" class="form-control" ng-model='register.username' placeholder="Username" aria-describedby="basic-addon1">

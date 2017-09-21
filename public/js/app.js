@@ -36,8 +36,10 @@ app.controller('mainController', ['$http', function($http){
       }},
     }).then(function(response){
       console.log(response);
+      this.loginForm = false;
+      this.registerForm = false;
       //controller.checkLogin();
-    })
+    }.bind(this))
   }
   this.login = function(userPass){
     $http({
@@ -50,6 +52,8 @@ app.controller('mainController', ['$http', function($http){
       localStorage.setItem('token', JSON.stringify(response.data.token));
       localStorage.setItem('logged', JSON.stringify(true));
       this.checkLogin();
+      this.loginForm = false;
+      this.registerForm = false;
     }.bind(this));
   }
   this.logout = function() {
