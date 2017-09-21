@@ -6,13 +6,17 @@ body {
   padding: 2%;
 }
 #nav-btn {
-  margin-left: 5%;
   margin-right: 2%;
 }
 #nav-form {
   margin: auto;
   position: relative;
   float: right;
+}
+#help {
+  float: right;
+  margin: 1% 5%;
+  padding: 1%;
 }
 #mainlogo {
   height: 30%;

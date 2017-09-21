@@ -12,9 +12,13 @@
   </head>
   <body>
     <section ng-controller='mainController as ctrl'>
+      <!-- nav section -->
       <nav class='nav navbar-light bg-faded" navbar-fixed-top'>
-        <a href="#" ng-click='ctrl.toggleLogin()' ng-if='!ctrl.logged'><button class="btn btn-primary " id="nav-btn">login</button></a>
-        <a href="#" ng-click='ctrl.toggleRegister()' ng-if='!ctrl.logged'><button class="btn btn-primary " id='nav-btn'>register</button></a>
+        <!-- login btn -->
+        <a href="#" id="nav-btn" ng-click='ctrl.toggleLogin()' ng-if='!ctrl.logged'><button class="btn btn-primary ">login</button></a>
+        <!-- register btn -->
+        <a href="#" id='nav-btn' ng-click='ctrl.toggleRegister()' ng-if='!ctrl.logged'><button class="btn btn-primary">register</button></a>
+        <!-- logout btn -->
         <button class="btn btn-danger" id='nav-btn' ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
         <!-- login form -->
 
@@ -39,11 +43,12 @@
             <button class="btn btn-outline-primary">register</button>
           </div>
         </form>
-      </nav>
+       </nav> <!-- end of nav section -->
 
       <!-- logo -->
 
       <header>
+        <button class="btn btn-outline-secondary pull-right" id='help'><i class="fa fa-question" aria-hidden="true"></i></button>
         <div class="container text-center">
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
         </div>

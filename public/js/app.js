@@ -47,7 +47,6 @@ app.controller('mainController', ['$http', function($http){
       url: this.url + '/users/login',
       data: { user: { username: userPass.username, password: userPass.password }},
     }).then(function(response){
-
       if(response.data.message === 'Unauthorized'){
         console.log(response);
         this.error = 'username or password was incorrect'
