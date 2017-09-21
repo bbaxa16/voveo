@@ -48,7 +48,20 @@
       <!-- logo -->
 
       <header>
-        <button class="btn btn-outline-secondary pull-right" id='help'><i class="fa fa-question" aria-hidden="true"></i></button>
+        <!-- help button -->
+        <button class="btn btn-outline-secondary pull-right" id='help' ng-mouseover="ctrl.toggleHelp()" ng-mouseleave="ctrl.toggleHelp()"><i class="fa fa-question" aria-hidden="true"></i></button>
+        <!-- help modal -->
+        <!-- <div class="modal fade">
+          <div class="modal-dialog" role='document'>
+            <div class="modal-content">
+              <div class='modal-header'>
+                <h5 class='modal-title'></h5>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <h1 ng-if='ctrl.helpModal'>hi</h1>
+        <!-- title -->
         <div class="container text-center">
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
         </div>

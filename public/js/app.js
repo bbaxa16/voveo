@@ -13,6 +13,9 @@ app.controller('mainController', ['$http', function($http){
     this.loginForm = !this.loginForm;
     this.registerForm = false;
   }
+  this.toggleHelp = function() {
+    this.helpModal = !this.helpModal;
+  }
   this.getReps = function(address){
     $http({
       method: 'GET',
