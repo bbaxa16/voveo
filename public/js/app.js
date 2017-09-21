@@ -26,6 +26,19 @@ app.controller('mainController', ['$http', function($http){
       console.log(err);
     })
   }
+  this.register = function(register) {
+    $http({
+      method: 'POST',
+      url: this.url + '/users',
+      data: { user: {
+        username: register.username,
+        password: register.password
+      }},
+    }).then(function(response){
+      console.log(response);
+      //controller.checkLogin();
+    })
+  }
   this.login = function(userPass){
     $http({
       method: 'POST',

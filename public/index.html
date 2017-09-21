@@ -30,12 +30,12 @@
 
         <!-- register form -->
 
-        <form class="form-inline" ng-if='ctrl.registerForm' ng-submit='ctrl.login(userPass)'>
+        <form class="form-inline" ng-if='ctrl.registerForm' ng-submit='ctrl.register(register)'>
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">@</span>
-            <input type="text" class="form-control" ng-model='userPass.username' placeholder="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" ng-model='register.username' placeholder="Username" aria-describedby="basic-addon1">
             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
-            <input type="password" class="form-control" ng-model='userPass.password' placeholder="Password" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" ng-model='register.password' placeholder="Password" aria-describedby="basic-addon1">
             <button class="btn btn-outline-primary">register</button>
           </div>
         </form>
