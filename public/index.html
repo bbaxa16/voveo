@@ -18,6 +18,8 @@
         <a href="#" id="nav-btn" ng-click='ctrl.toggleLogin()' ng-if='!ctrl.logged'><button class="btn btn-primary ">login</button></a>
         <!-- register btn -->
         <a href="#" id='nav-btn' ng-click='ctrl.toggleRegister()' ng-if='!ctrl.logged'><button class="btn btn-primary">register</button></a>
+        <!-- user icon -->
+        <i class="fa fa-user-circle fa-3x" id='nav-btn' ng-if='ctrl.logged' aria-hidden="true"></i>
         <!-- logout btn -->
         <button class="btn btn-danger" id='nav-btn' ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
         <!-- login form -->

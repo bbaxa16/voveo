@@ -8,6 +8,10 @@ body {
 #nav-btn {
   margin-right: 2%;
 }
+#user-icon {
+  margin-right: 2%;
+  width: 10%;
+}
 #nav-form {
   margin: auto;
   position: relative;
@@ -28,6 +32,7 @@ body {
 #mainlogo {
   height: 30%;
   width: 30%;
+  margin: 2%;
 }
 
 input, select {
