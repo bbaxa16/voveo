@@ -49,18 +49,27 @@
 
       <header>
         <!-- help button -->
-        <button class="btn btn-outline-secondary pull-right" id='help' ng-mouseover="ctrl.toggleHelp()" ng-mouseleave="ctrl.toggleHelp()"><i class="fa fa-question" aria-hidden="true"></i></button>
+        <div ng-mouseover="ctrl.toggleHelp()" >
+        <button class="btn btn-outline-secondary pull-right" id='help'><i class="fa fa-question"  aria-hidden="true"></i></button>
+        </div>
         <!-- help modal -->
-        <!-- <div class="modal fade">
+        <div ng-if='ctrl.helpModal' id='helpModal'>
           <div class="modal-dialog" role='document'>
             <div class="modal-content">
-              <div class='modal-header'>
-                <h5 class='modal-title'></h5>
+              <div class="modal-header">
+                <h5 class='modal-title'> info</h5>
+                <span id="closebutton" class="text-top"><button class="btn btn-default" ng-click="ctrl.toggleHelp()">X</button></span>
               </div>
+              <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+              </div>
+
             </div>
+
           </div>
-        </div> -->
-        <h1 ng-if='ctrl.helpModal'>hi</h1>
+
+        </div>
         <!-- title -->
         <div class="container text-center">
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
