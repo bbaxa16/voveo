@@ -13,9 +13,9 @@
   <body>
     <section ng-controller='mainController as ctrl'>
       <nav class='nav navbar navbar-light bg-faded" navbar-fixed-top'>
-        <a href="#" ng-click='ctrl.toggleLogin()'>login</a>
-        <a href="#" ng-click='ctrl.toggleRegister()'>register</a>
-
+        <a href="#" ng-click='ctrl.toggleLogin()'><button class="btn btn-primary nav-btn">login</button></a>
+        <a href="#" ng-click='ctrl.toggleRegister()'><button class="btn btn-primary nav-btn">register</button></a>
+        <button class="btn btn-danger nav-btn" ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
         <!-- login form -->
 
         <form class="form-inline" ng-if='ctrl.loginForm' ng-submit='ctrl.login(userPass)'>
@@ -57,10 +57,6 @@
           </div>
         </ul>
       </div>
-      <button ng-click='ctrl.getUsers()'>get em</button>
-      <h4>{{ctrl.users}}</h4>
-      <h4>{{ctrl.error}}</h4>
-      <button ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
     </section>
   </body>
 </html>

@@ -75,7 +75,7 @@ app.controller('mainController', ['$http', function($http){
       if(response.data.status == 401){
       this.error = 'Unauthorized';
       } else {
-      this.users = response.data[0].username
+      this.users = response.data.username
       console.log(response);
       }
     }.bind(this));

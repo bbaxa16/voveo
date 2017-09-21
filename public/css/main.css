@@ -5,7 +5,9 @@ body {
   background: #C0C0C0;
   padding: 2%;
 }
-
+.nav-btn {
+  float: left;
+}
 #mainlogo {
   height: 30%;
   width: 30%;
