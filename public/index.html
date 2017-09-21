@@ -27,7 +27,7 @@
             <button class="btn btn-outline-primary">login</button>
           </div>
         </form>
-
+        <div ng-if='ctrl.unauthorized'class="alert alert-danger" id='nav-form' role="alert">{{ctrl.error}}</div>
         <!-- register form -->
 
         <form class="form-inline" id="nav-form" ng-if='ctrl.registerForm' ng-submit='ctrl.register(register)'>

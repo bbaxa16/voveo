@@ -47,13 +47,21 @@ app.controller('mainController', ['$http', function($http){
       url: this.url + '/users/login',
       data: { user: { username: userPass.username, password: userPass.password }},
     }).then(function(response){
-      console.log(response);
-      this.user = response.data.user;
-      localStorage.setItem('token', JSON.stringify(response.data.token));
-      localStorage.setItem('logged', JSON.stringify(true));
-      this.checkLogin();
-      this.loginForm = false;
-      this.registerForm = false;
+
+      if(response.data.message === 'Unauthorized'){
+        console.log(response);
+        this.error = 'username or password was incorrect'
+        this.unauthorized = true;
+      }
+      else {
+        this.user = response.data.user;
+        localStorage.setItem('token', JSON.stringify(response.data.token));
+        localStorage.setItem('logged', JSON.stringify(true));
+        this.checkLogin();
+        this.loginForm = false;
+        this.registerForm = false;
+        this.unauthorized = false;
+      }
     }.bind(this));
   }
   this.logout = function() {
