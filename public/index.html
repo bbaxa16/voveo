@@ -79,12 +79,10 @@
       </header>
       <section ng-include="'./form.html'">
       </section>
-      <div class="container">
-        <ul ng-repeat='official in ctrl.officials'>
+      <div class="container" id='reps' ng-repeat='official in ctrl.officials'>
           <div class= "text-center">                    <h4>{{official.name}}</h4>
-            <img src="{{official.photoUrl}}" class='officialphoto' alt="official photo unavailable">
+            <img src="{{official.photoUrl}}" class='officialphoto' alt="photo unavailable">
           </div>
-        </ul>
       </div>
     </section>
   </body>
