@@ -1,7 +1,11 @@
 const app = angular.module('voveo', []);
 
+  // const apiKey = process.env.API_KEY; for some reason this is throwing an error
+
+
 app.controller('mainController', ['$http', function($http){
   const controller = this;
+
   this.url = 'http://localhost:3000/';
   this.loginForm = false;
   this.registerForm = false;
@@ -19,7 +23,7 @@ app.controller('mainController', ['$http', function($http){
   this.getReps = function(address){
     $http({
       method: 'GET',
-      url: 'https://www.googleapis.com/civicinfo/v2/representatives' + '?key=&address=' + this.address.split(' ').join('%20') + '%20' + this.city.split(' ').join('%20') + '%20' + this.state.split(' ').join('%20')
+      url: 'https://www.googleapis.com/civicinfo/v2/representatives' + '?key=AIzaSyBeJbFpC9D_pouOsmIW_9NWnwp56HmcORw&address=' + this.address.split(' ').join('%20') + '%20' + this.city.split(' ').join('%20') + '%20' + this.state.split(' ').join('%20')
     }).then(function(response){
       console.log('success');
       controller.officials = response.data.officials
