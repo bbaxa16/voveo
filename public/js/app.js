@@ -27,7 +27,16 @@ app.controller('mainController', ['$http', function($http){
     }).then(function(response){
       console.log('success');
       controller.officials = response.data.officials
-      console.log(controller.officials);
+      console.log(response);
+      controller.city = response.data.normalizedInput.city;
+      controller.state = response.data.normalizedInput.state;
+      controller.zip = response.data.normalizedInput.zip;
+      console.log('city, state and zip is: ');
+      console.log(controller.city);
+      console.log(controller.state);
+      console.log(controller.zip);
+      console.log('runnin new data function here');
+      controller.newdata(1);
     }, function(err){
       console.log('fail');
       console.log(err);
@@ -98,5 +107,33 @@ app.controller('mainController', ['$http', function($http){
       }
     }.bind(this));
   }
+  this.printshit = function() {
+    console.log('OH SHIII');
+    console.log(this.ish);
+  }
   this.checkLogin();
+  this.newdata = function(user_id) {
+  $http({
+    url: this.url + '/users/' + user_id + '/data',
+    method: 'POST',
+    data: {
+      city: this.city,
+      state: this.state,
+      zip: this.zip }
+  }).then(function(response){
+    console.log('this is creating a new data thing');
+    console.log(response);
+  })
+}
+
+  // this.memberinfo = function(){
+  //   $http({
+  //     method: 'GET',
+  //     url: 'https://api.propublica.org/congress/v1/members/K000388.json',
+  //     headers: { Authorization: 'X-API-Key: Zxmr4dlKyl8vLvBWZEPXLtEKDBeEc0UpZWUXtFkN' }
+  //   }).then(function(response){
+  //     console.log(response);
+  //   })
+  // }
+  // this.memberinfo()
 }]);

@@ -77,6 +77,9 @@
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
         </div>
       </header>
+
+      <button class='btn btn-primary' ng-click='ctrl.newdata(1)'>new data</button>
+
       <section ng-include="'./form.html'">
       </section>
       <div class="container" id='reps' ng-repeat='official in ctrl.officials'>
