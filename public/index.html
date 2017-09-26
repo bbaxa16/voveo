@@ -14,26 +14,10 @@
     <section ng-controller='mainController as ctrl'>
       <!-- nav section -->
       <nav class='nav navbar-light bg-faded" navbar-fixed-top'>
-        <!-- login btn -->
-        <a href="#" id="nav-btn" ng-click='ctrl.toggleLogin()' ng-if='!ctrl.logged'><button class="btn btn-primary ">login</button></a>
+
         <!-- register btn -->
         <a href="#" id='nav-btn' ng-click='ctrl.toggleRegister()' ng-if='!ctrl.logged'><button class="btn btn-primary">register</button></a>
-        <!-- user icon -->
-        <i class="fa fa-user-circle fa-3x" id='nav-btn' ng-if='ctrl.logged' aria-hidden="true"></i>
-        <!-- logout btn -->
-        <button class="btn btn-danger" id='nav-btn' ng-if='ctrl.logged' ng-click='ctrl.logout()'>Logout</button>
-        <!-- login form -->
 
-        <form class="form-inline" id='nav-form' ng-if='ctrl.loginForm' ng-submit='ctrl.login(userPass)'>
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">@</span>
-            <input type="text" class="form-control" ng-model='userPass.username' placeholder="Username" aria-describedby="basic-addon1">
-            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
-            <input type="password" class="form-control" ng-model='userPass.password' placeholder="Password" aria-describedby="basic-addon1">
-            <button class="btn btn-outline-primary">login</button>
-          </div>
-        </form>
-        <div ng-if='ctrl.unauthorized'class="alert alert-danger" id='nav-form' role="alert">{{ctrl.error}}</div>
         <!-- register form -->
 
         <form class="form-inline" id="nav-form" ng-if='ctrl.registerForm' ng-submit='ctrl.register(register)'>
@@ -47,13 +31,14 @@
         </form>
        </nav> <!-- end of nav section -->
 
-      <!-- logo -->
 
       <header>
+
         <!-- help button -->
         <div ng-mouseover="ctrl.toggleHelp()" >
         <button class="btn btn-outline-secondary pull-right" id='help'><i class="fa fa-question"  aria-hidden="true"></i></button>
         </div>
+
         <!-- help modal -->
         <div ng-if='ctrl.helpModal' id='helpModal'>
           <div class="modal-dialog" role='document'>
@@ -64,19 +49,17 @@
               </div>
               <div class="modal-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
+
         <!-- title -->
         <div class="container text-center">
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
         </div>
       </header>
+
       <!-- address form -->
 
       <section ng-include="'./form.html'"></section>
