@@ -1,29 +1,18 @@
 # voveo
 
+LIVE SITE: http://voveo.herokuapp.com/
 
 # purpose
 
-voveo is intended to making voting as easy and accessible as possible by providing polling and election information to users through an intuitive user interface and a data driven mindset.
+voveo is intended to make participating in the political process as easy and accessible as possible by providing polling and election, and representative information to users through an intuitive user interface and a data driven mindset.
 
 # technical summary
 
-voveo will be a single page application powered by Rails and AngularJS. voveo will act as a resource for finding election and polling information based upon a users address. This application will consume the Google Civic Information API, which will provide the polling and election information. There will be three models: users, election info, and polling info.
+tech used: HTML, CSS, JavaScript, SQL, Rails, Node.js, Express, AngularJS
+
+voveo will be a single page application powered by Rails and AngularJS. voveo acts as a demo page for the broader tech provided by voveo-services. This application will consume the Google Civic Information API, which will representative data. There is two models - users (client) and data (analytics on searches).
 
 - API: https://developers.google.com/civic-information/
-
-# back end
-
-- have three models [users, polling data, election data]
-
-- the users and the other two models will have a many to many relationship
-
-- will have JWT auth setup
-
-
-# front end
-
-- make requests to the backend and the third party API.
-- render a virtual DOM based upon queries and how the user moves around the site.
 
 
 # user stories
@@ -35,8 +24,7 @@ voveo will be a single page application powered by Rails and AngularJS. voveo wi
 -  A user will be able to add personal information to each saved query (ie: putting a first and last name if they are tracking for individuals.)
 
 
-# stretch goals
+# PLANNED FEATURES
 
-- You have the option to add an email to your saved polling/election information that will send you your info.
-- Add the ability to query for your representatives and add links to their sites/ways to contact them.
-- Use React instead of AngularJS.
+- Add an email model to collect names/emails of voluntary users to add to a newsletter.
+- Add a multiple search options during election season so you can query for polling locations.

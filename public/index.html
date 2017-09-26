@@ -77,16 +77,25 @@
           <img src="./assets/voveo.png" class="img-fluid" id="mainlogo" alt="Responsive image">
         </div>
       </header>
+      <!-- address form -->
 
-      <button class='btn btn-primary' ng-click='ctrl.newdata(1)'>new data</button>
+      <section ng-include="'./form.html'"></section>
 
-      <section ng-include="'./form.html'">
-      </section>
-      <div class="container" id='reps' ng-repeat='official in ctrl.officials'>
-          <div class= "text-center">                    <h4>{{official.name}}</h4>
-            <img src="{{official.photoUrl}}" class='officialphoto' alt="photo unavailable">
-          </div>
-      </div>
+
+      <table class='table table-striped'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Photo</th>
+          </tr>
+        </thead>
+        <tbody ng-repeat='official in ctrl.officials|limitTo:4'>
+          <tr>
+            <td>{{official.name}}</td>
+            <td style='width: 400em'><img src="{{official.photoUrl}}" class='officialphoto' alt="photo unavailable"></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </body>
 </html>
