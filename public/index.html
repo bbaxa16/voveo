@@ -81,8 +81,8 @@
 
       <section ng-include="'./form.html'"></section>
 
-
-      <table class='table table-striped'>
+      <h5 ng-repeat='of in ctrl.officials.slice(2,ctrl.officials.length) | limitTo: 2'>{{of.name}}</h5>
+      <!-- <table class='table table-striped'>
         <thead>
           <tr>
             <th>Name</th>
@@ -95,7 +95,7 @@
             <td style='width: 400em'><img src="{{official.photoUrl}}" class='officialphoto' alt="photo unavailable"></td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </section>
   </body>
 </html>
