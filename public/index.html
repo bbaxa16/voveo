@@ -62,7 +62,7 @@
 
       <!-- address form -->
 
-      <section ng-include="'./form.html'"></section>
+      <section ng-if='!ctrl.repz' ng-include="'./form.html'"></section>
 
       <h5 ng-repeat='of in ctrl.officials.slice(2,ctrl.officials.length) | limitTo: 2'>{{of.name}}</h5>
       <!-- <table class='table table-striped'>
