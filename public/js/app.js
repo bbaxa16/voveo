@@ -29,7 +29,7 @@ app.controller('mainController', ['$http', function($http){
       controller.state = response.data.normalizedInput.state;
       controller.zip = response.data.normalizedInput.zip;
       //uncomment this function when you're ready to save data again.
-      controller.newdata(1);
+      controller.newdata(5);
       controller.repz = true;
     }, function(err){
       console.log('fail');
