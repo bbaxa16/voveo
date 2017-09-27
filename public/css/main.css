@@ -38,10 +38,7 @@ input, select {
 #reps {
 
 }
-.officialphoto {
-  height: 10%;
-  width: 10%;
-}
+
 
 #address {
   background: #828081;
@@ -50,4 +47,19 @@ input, select {
 }
 #address-form {
   justify-content: center;
+}
+
+#senator {
+  border: 2px solid darkgrey;
+  margin:0 2%;
+  padding: 1%;
+  list-style-type: none;
+}
+li {
+  display: inline;
+  margin: 2%;
+}
+.officialphoto {
+  height: 50%;
+  width: 55%;
 }

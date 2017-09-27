@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>voveo</title>
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- fontawesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="icon" href="./assets/voveo_sm.png">
+    <!-- css stylesheet -->
     <link rel="stylesheet" href="./css/main.css">
+    <!-- angular library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" charset="utf-8"></script>
+    <!-- jquery library -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <!-- jquery js file -->
+    <script src="./js/jquery.js" charset="utf-8"></script>
+    <!-- angular js file -->
     <script src="./js/app.js" charset="utf-8"></script>
   </head>
   <body>
@@ -64,21 +76,25 @@
 
       <section ng-if='!ctrl.repz' ng-include="'./form.html'"></section>
 
-      <h5 ng-repeat='of in ctrl.officials.slice(2,ctrl.officials.length) | limitTo: 2'>{{of.name}}</h5>
-      <!-- <table class='table table-striped'>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Photo</th>
-          </tr>
-        </thead>
-        <tbody ng-repeat='official in ctrl.officials|limitTo:4'>
-          <tr>
-            <td>{{official.name}}</td>
-            <td style='width: 400em'><img src="{{official.photoUrl}}" class='officialphoto' alt="photo unavailable"></td>
-          </tr>
-        </tbody>
-      </table> -->
+
+      <div class="row text-center">
+        <div class="col" id='senator' ng-repeat='of in ctrl.officials.slice(2,ctrl.officials.length) | limitTo: 2'>
+          <h4>Senator {{of.name}}</h4>
+          <img src="{{of.photoUrl}}" class='officialphoto' alt="photo unavailable">
+          <ul>
+            <li>
+              <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+            </li>
+            <li>
+              <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            </li>
+            <li>
+              <i class="fa fa-desktop fa-lg" aria-hidden="true"></i>
+
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </body>
 </html>
