@@ -5,6 +5,9 @@ body {
   background: #C0C0C0;
   padding: 2%;
 }
+#brand {
+  width: 5%;
+}
 #nav-btn {
   margin-right: 2%;
 }
@@ -28,17 +31,13 @@ body {
 }
 #mainlogo {
   height: 30%;
-  width: 30%;
+  width: 25%;
   margin: 2%;
 }
 
 input, select {
   margin: 1%;
 }
-#reps {
-
-}
-
 
 #address {
   background: #828081;

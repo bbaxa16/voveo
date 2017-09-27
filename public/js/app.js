@@ -6,7 +6,7 @@ const app = angular.module('voveo', []);
 app.controller('mainController', ['$http', function($http){
   const controller = this;
 
-  this.url = 'http://localhost:3000/';
+  this.url = 'http://voveo-api.herokuapp.com/';
   this.registerForm = false;
   this.repz = false;
   this.toggleRegister = function() {
