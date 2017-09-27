@@ -53,13 +53,15 @@ input, select {
   border: 2px solid darkgrey;
   margin:0 2%;
   padding: 1%;
-  list-style-type: none;
 }
 li {
-  display: inline;
   margin: 2%;
+    list-style-type: none;
 }
 .officialphoto {
   height: 50%;
   width: 55%;
+}
+a:hover {
+  text-decoration: none;
 }

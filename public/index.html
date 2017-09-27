@@ -79,20 +79,39 @@
 
       <div class="row text-center">
         <div class="col" id='senator' ng-repeat='of in ctrl.officials.slice(2,ctrl.officials.length) | limitTo: 2'>
+
           <h4>Senator {{of.name}}</h4>
+          <h6>{{of.party}}</h6>
           <img src="{{of.photoUrl}}" class='officialphoto' alt="photo unavailable">
           <ul>
             <li>
               <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+              <span>
+                {{of.phones[0]}}
+              </span>
             </li>
             <li>
-              <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+              <i class="fa fa-telegram fa-lg" aria-hidden="true"></i>
+              <span>{{of.address[0].line1}}</span>
+              <ul>
+                <li>
+                  <span>{{of.address[0].city}},</span>
+                  <span> {{of.address[0].state}} </span>
+                  <span>{{of.address[0].zip}}</span>
+              </li>
+              </ul>
             </li>
             <li>
               <i class="fa fa-desktop fa-lg" aria-hidden="true"></i>
-
+              <span><a href='{{of.urls[0]}}' target="_blank">{{of.urls[0]}}</a></span>
             </li>
           </ul>
+          <span>
+            <a href='http://facebook.com/{{of.channels[0].id}}' target="_blank"<i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+          </span>
+          <span>
+            <a href='http://twitter.com/{{of.channels[1].id}}' target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+          </span>
         </div>
       </div>
     </section>
